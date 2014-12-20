@@ -14,6 +14,7 @@ chmod 755 /usr/local/bin/ics2html
 
 # Make sure the config directory is created
 icalsync > /dev/null 2>&1
+chown -R `logname` $HOME/.config/ical-html-sync
 
 # Add the startup item
 cp ./com.adamrehn.icalsync.plist ~/Library/LaunchAgents/
