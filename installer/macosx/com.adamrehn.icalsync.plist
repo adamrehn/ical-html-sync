@@ -12,5 +12,11 @@
 		
 		<key>KeepAlive</key>
 		<true/>
+		
+		<key>EnvironmentVariables</key>
+		<dict>
+			<key>PATH</key>
+			<string>/bin:/usr/bin:/usr/sbin:/sbin:/usr/local/bin</string>
+		</dict>
 	</dict>
 </plist>
