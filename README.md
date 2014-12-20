@@ -14,22 +14,22 @@ If Dropbox synchronisation is not required, `ics2html` can simply be used in a s
 Installation
 ------------
 
-Windows users can simply run the supplied installer, which will install the executables, set `icalsync` to run at startup, and start `icalsync` immediately.
+Windows users can simply run the supplied installer, which will install the executables and set `icalsync` to run at startup.
 
-For Linux and Mac OS X, extract the files from the compressed archive, and run `sudo ./install.sh`.
+Under Linux and Mac OS X, extract the files from the compressed archive, and run `sudo ./install.sh`.
+
+Once installation is complete, the `icalsync.conf` configuration file will need to be modified (see below.) After updating the configuration file, simply reboot, and `icalsync` will run in the background and monitor changes to the calendar file.
 
 
 Configuration
 -------------
 
-When `icalsync` is first run, it will create the default configuration files in the following directory:
+When `icalsync` is installed, it will create the default configuration files in the following directory:
 
 - Windows: `%APPDATA%/ical-html-sync`
 - Linux and Mac OS X: `~/.config/ical-html-sync`
 
-`icalsync` will then exit with the error `Error: file to be monitored does not exist: "/path/to/calendar.ics"`.
-
-You will then need to edit the file `icalsync.conf`, which defaults to the following contents:
+You will then to edit the file `icalsync.conf`, which defaults to the following contents:
 
 ```
 /path/to/calendar.ics
@@ -37,13 +37,14 @@ Calendar Events.html
 Calendar Tasks.html
 ```
 
-**The first line must be replaced with the full path to the calendar file which will be monitored.** The second and third lines can be changed if desired - they specify the filenames (relative to the user's Dropbox directory) of the generated HTML files for the events report and tasks report, respectively. If only one of the reports is required, the line specifying the filename for the other report can be left blank, which will prevent it from being generated.
+- **The first line must be replaced with the full path to the calendar file which will be monitored.**
+- The second and third lines can be changed if desired - they specify the filenames (relative to the user's Dropbox directory) of the generated HTML files for the events report and tasks report, respectively. If only one of the reports is required, the line specifying the filename for the other report can be left blank, which will prevent it from being generated.
 
 
 Uninstallation
 --------------
 
-The Windows installer generates an uninstaller, which is located in the same directory as the executable files.
+The Windows installer generates an uninstaller, which is located in the same directory as the installed executable files.
 
 Linux and Mac OS X users need to run `sudo ./uninstall.sh` in the directory where the files were first extracted from the compressed archive.
 
