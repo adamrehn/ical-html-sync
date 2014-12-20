@@ -30,7 +30,7 @@ ifeq ($(ISMINGW),1)
 	CC = gcc
 	CXX = g++
 	EXE_EXT = .exe
-	LDFLAGS += -s -static-libgcc -static-libstdc++
+	LDFLAGS += -mwindows -s -static-libgcc -static-libstdc++
 endif
 
 # Under OSX, we use clang++ as the compiler and ensure we link against libstdc++, and the CoreServices and CoreFoundation frameworks
