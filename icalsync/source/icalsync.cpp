@@ -96,7 +96,7 @@ int main (int argc, char* argv[])
 		config.tasksTemplateFile = TemplateManager::getTasksReportTemplateLocation();
 		
 		//Begin monitoring the calendar file
-		ReportGenerator::MonitorCalendarAndGenerateReports(config, dirname(argv[0]));
+		ReportGenerator::MonitorCalendarAndGenerateReports(config, dirname(argv[0]) + "/");
 	}
 	catch (std::runtime_error& e) {
 		std::clog << "Error: " << e.what() << std::endl;
